@@ -1,0 +1,55 @@
+:root {
+  --papel: #f4f3ef;
+  --cartao: #fbfaf7;
+  --borda: #e3e1da;
+  --texto: #1f2933;
+  --texto-2: #52606d;
+  --petroleo: #1e5a66;
+  --petroleo-claro: #dcebec;
+  --ambar: #9a6410;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --papel: #161b1f;
+    --cartao: #1e252b;
+    --borda: #2c353d;
+    --texto: #e6e3dc;
+    --texto-2: #a9b1b8;
+    --petroleo: #7fbcc6;
+    --petroleo-claro: #214a52;
+    --ambar: #e0b45c;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--texto);
+  font: 17px/1.65 system-ui, -apple-system, "Segoe UI", Ubuntu, Cantarell, "Noto Sans", sans-serif;
+}
+a { color: var(--petroleo); }
+header, main, footer { max-width: 880px; margin: 0 auto; padding: 0 22px; }
+header { display: flex; align-items: center; gap: 14px; padding-top: 26px; padding-bottom: 8px; flex-wrap: wrap; }
+header img { width: 48px; height: 48px; border-radius: 11px; }
+header .marca { font-size: 22px; font-weight: 600; margin-right: auto; color: var(--texto); text-decoration: none; }
+nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 15px; }
+nav a { text-decoration: none; color: var(--texto-2); }
+nav a[aria-current="page"] { color: var(--petroleo); font-weight: 600; }
+h1 { font-size: 34px; line-height: 1.25; margin: 34px 0 12px; }
+h2 { font-size: 22px; margin: 34px 0 8px; }
+h3 { font-size: 18px; margin: 22px 0 6px; }
+.lead { font-size: 19px; color: var(--texto-2); max-width: 680px; }
+.grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; margin: 22px 0; }
+.cartao { background: var(--cartao); border: 1px solid var(--borda); border-radius: 14px; padding: 16px 18px; }
+.cartao h3 { margin-top: 0; }
+.cartao p { margin: 0; color: var(--texto-2); font-size: 16px; }
+.destaque { background: var(--petroleo-claro); border-radius: 14px; padding: 16px 18px; margin: 22px 0; }
+.data { color: var(--texto-2); font-size: 15px; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; margin: 10px 0; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--borda); vertical-align: top; }
+th { color: var(--texto-2); font-weight: 600; }
+footer { margin-top: 48px; padding-top: 18px; padding-bottom: 34px; border-top: 1px solid var(--borda); color: var(--texto-2); font-size: 14px; }
+footer a { color: var(--texto-2); }
+@media (max-width: 560px) { h1 { font-size: 28px; } body { font-size: 16px; } }

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de Privacidade · ConfereWatt</title>
+<link rel="icon" type="image/svg+xml" href="img/icone.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header>
+  <img src="img/icone.svg" alt="">
+  <a class="marca" href="index.html">ConfereWatt</a>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="privacidade.html" aria-current="page">Privacidade</a>
+    <a href="termos.html">Termos de uso</a>
+  </nav>
+</header>
+<main>
+  <h1>Política de Privacidade</h1>
+  <p class="data">Vigente desde 24 de novembro de 2026.</p>
+
+  <p>Esta política explica como o ConfereWatt (programa para computador e aplicativo de
+  consulta para Android) trata informações. Em resumo: <strong>os dados ficam no
+  computador do órgão e, se o órgão quiser, no Google Drive da própria instalação. O
+  desenvolvedor não recebe, não vê e não guarda dados de ninguém.</strong></p>
+
+  <h2>1. Onde os dados ficam</h2>
+  <p>O ConfereWatt não tem servidor. As faturas importadas, o banco de dados, os termos e
+  os anexos ficam numa pasta do computador onde o programa está instalado, sob a
+  responsabilidade do órgão que o utiliza.</p>
+
+  <h2>2. Que dados o programa trata</h2>
+  <table>
+    <tr><th>Dado</th><th>Origem</th><th>Para quê</th></tr>
+    <tr><td>Dados das faturas de energia (unidades consumidoras, endereços, CNPJ do
+      órgão, leituras, consumo, valores, vencimentos)</td><td>PDFs enviados pela
+      distribuidora ao órgão</td><td>Conferência, termos, painel e consulta</td></tr>
+    <tr><td>Nome do operador e do responsável que assina o termo (e matrícula, se
+      informada)</td><td>Digitados no programa</td><td>Identificar quem conferiu e
+      quem assina o termo</td></tr>
+    <tr><td>Endereço de e-mail da conta Google escolhida para as cópias</td><td>Login
+      do Google, feito pelo próprio órgão</td><td>Mostrar em qual conta as cópias
+      estão sendo guardadas</td></tr>
+  </table>
+  <p>O programa não coleta dados de localização, contatos, câmera (exceto para ler o QR
+  Code de pareamento no celular, sem gravar imagem), nem dados de navegação.</p>
+
+  <h2>3. Uso do Google Drive</h2>
+  <p>O Google Drive é opcional. Quando o órgão conecta uma conta Google, o ConfereWatt
+  pede somente o acesso <code>drive.file</code>, que permite ver e alterar
+  <strong>apenas os arquivos criados pelo próprio ConfereWatt</strong>. O programa não
+  consegue ler, listar, alterar nem apagar nenhum outro arquivo da conta.</p>
+  <p>Com esse acesso, o ConfereWatt grava no Drive da instalação:</p>
+  <ul>
+    <li>cópias de segurança do banco de dados (as 30 mais recentes) e uma cópia de cada
+      arquivo guardado pelo programa: PDFs das faturas, termos e anexos das pendências;</li>
+    <li>os pacotes de consulta para os celulares pareados. Cada pacote é
+      <strong>cifrado (AES-256-GCM)</strong> com uma chave que existe só no computador e
+      no celular pareado, passada por QR Code presencialmente. O arquivo fica acessível
+      por um link secreto para o celular baixá-lo sem login; sem a chave, o conteúdo é
+      ilegível.</li>
+  </ul>
+  <p>A autorização do Google fica guardada no computador da instalação. Ela pode ser
+  desfeita a qualquer momento no próprio ConfereWatt (Sobre → Cópias de segurança →
+  Desconectar) ou na página
+  <a href="https://myaccount.google.com/permissions">Apps com acesso à sua conta</a>
+  do Google.</p>
+  <p>O uso e a transferência, pelo ConfereWatt, de informações recebidas das APIs do
+  Google seguem a
+  <a href="https://developers.google.com/terms/api-services-user-data-policy">Política
+  de Dados do Usuário dos Serviços de API do Google</a>, incluindo os requisitos de Uso
+  Limitado. Os dados obtidos do Google Drive são usados somente para as funções descritas
+  acima, não são transferidos a terceiros, não são usados para publicidade e não são
+  lidos por pessoas, inclusive pelo desenvolvedor.</p>
+
+  <h2>4. Aplicativo de consulta (Android)</h2>
+  <p>O celular recebe somente os pacotes cifrados descritos acima e guarda os dados
+  dentro do aplicativo, protegidos por PIN. Dez tentativas erradas apagam os dados do
+  aparelho. O pacote vale por 45 dias; depois disso, a consulta fica bloqueada até
+  chegar um pacote novo. O computador pode revogar um aparelho a qualquer momento,
+  o que apaga o arquivo daquele aparelho no Drive.</p>
+
+  <h2>5. O que o ConfereWatt não faz</h2>
+  <ul>
+    <li>Não exibe anúncios e não usa ferramentas de rastreamento ou estatísticas de uso.</li>
+    <li>Não vende, aluga nem compartilha dados.</li>
+    <li>Não envia dados ao desenvolvedor nem a qualquer servidor próprio.</li>
+  </ul>
+
+  <h2>6. Lei Geral de Proteção de Dados (LGPD)</h2>
+  <p>O órgão que instala e usa o ConfereWatt decide quais dados entram no programa e para
+  que são usados, sendo o controlador desses dados nos termos da Lei nº 13.709/2018. Os
+  pedidos dos titulares (acesso, correção, eliminação) devem ser feitos ao órgão. O
+  desenvolvedor não tem acesso aos dados, mas pode ajudar o órgão com dúvidas sobre o
+  funcionamento do programa.</p>
+
+  <h2>7. Guarda e eliminação</h2>
+  <p>Os dados ficam enquanto o órgão mantiver o programa e as cópias. Para eliminá-los:
+  apague a pasta de dados do ConfereWatt no computador, as cópias de segurança locais ou
+  em pendrive, a pasta do ConfereWatt no Google Drive e desinstale o aplicativo dos
+  celulares.</p>
+
+  <h2>8. Segurança</h2>
+  <p>Os arquivos guardados pelo programa ficam protegidos contra alteração acidental; os
+  termos têm código de verificação; os pacotes do celular são cifrados por aparelho.
+  A segurança do computador e da conta Google (senha forte e verificação em duas etapas)
+  é responsabilidade do órgão.</p>
+
+  <h2>9. Alterações e contato</h2>
+  <p>Mudanças nesta política serão publicadas nesta página, com a nova data de vigência.
+  Dúvidas: <a href="mailto:conferewatt@gmail.com">conferewatt@gmail.com</a>.</p>
+</main>
+<footer>
+  ConfereWatt · desenvolvido por Dalton Salema ·
+  <a href="index.html">Início</a> ·
+  <a href="termos.html">Termos de Uso</a>
+</footer>
+</body>
+</html>
