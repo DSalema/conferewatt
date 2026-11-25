@@ -1,0 +1,351 @@
+:root {
+  --papel: #f4f3ef;
+  --cartao: #fbfaf7;
+  --borda: #e3e1da;
+  --texto: #1f2933;
+  --texto-2: #52606d;
+  --petroleo: #1e5a66;
+  --petroleo-claro: #dcebec;
+  --ambar: #9a6410;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --papel: #161b1f;
+    --cartao: #1e252b;
+    --borda: #2c353d;
+    --texto: #e6e3dc;
+    --texto-2: #a9b1b8;
+    --petroleo: #7fbcc6;
+    --petroleo-claro: #214a52;
+    --ambar: #e0b45c;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--texto);
+  font: 17px/1.65 system-ui, -apple-system, "Segoe UI", Ubuntu, Cantarell, "Noto Sans", sans-serif;
+}
+a { color: var(--petroleo); }
+header, main, footer { max-width: 880px; margin: 0 auto; padding: 0 22px; }
+header { display: flex; align-items: center; gap: 14px; padding-top: 26px; padding-bottom: 8px; flex-wrap: wrap; }
+header img { width: 48px; height: 48px; border-radius: 11px; }
+header .marca { font-size: 22px; font-weight: 600; margin-right: auto; color: var(--texto); text-decoration: none; }
+nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 15px; }
+nav a { text-decoration: none; color: var(--texto-2); }
+nav a[aria-current="page"] { color: var(--petroleo); font-weight: 600; }
+h1 { font-size: 34px; line-height: 1.25; margin: 34px 0 12px; }
+h2 { font-size: 22px; margin: 34px 0 8px; }
+h3 { font-size: 18px; margin: 22px 0 6px; }
+.lead { font-size: 19px; color: var(--texto-2); max-width: 680px; }
+.grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; margin: 22px 0; }
+.cartao { background: var(--cartao); border: 1px solid var(--borda); border-radius: 14px; padding: 16px 18px; }
+.cartao h3 { margin-top: 0; }
+.cartao p { margin: 0; color: var(--texto-2); font-size: 16px; }
+.destaque { background: var(--petroleo-claro); border-radius: 14px; padding: 16px 18px; margin: 22px 0; }
+.data { color: var(--texto-2); font-size: 15px; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; margin: 10px 0; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--borda); vertical-align: top; }
+th { color: var(--texto-2); font-weight: 600; }
+footer { margin-top: 48px; padding-top: 18px; padding-bottom: 34px; border-top: 1px solid var(--borda); color: var(--texto-2); font-size: 14px; }
+footer a { color: var(--texto-2); }
+@media (max-width: 560px) { h1 { font-size: 28px; } body { font-size: 16px; } }
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ConfereWatt · Conferência de faturas de energia elétrica</title>
+<meta name="description" content="ConfereWatt confere faturas de energia elétrica da Enel e da Light com base na REN ANEEL nº 1.000/2021 e gera o Termo de Conferência e Liberação para o setor público.">
+<link rel="icon" type="image/svg+xml" href="img/icone.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header>
+  <img src="img/icone.svg" alt="">
+  <a class="marca" href="index.html">ConfereWatt</a>
+  <nav>
+    <a href="index.html" aria-current="page">Início</a>
+    <a href="privacidade.html">Privacidade</a>
+    <a href="termos.html">Termos de uso</a>
+  </nav>
+</header>
+<main>
+  <h1>Conferência de faturas de energia elétrica para o setor público</h1>
+  <p class="lead">O ConfereWatt lê as faturas em PDF da Enel e da Light, confere cada nota
+  fiscal com base na REN ANEEL nº 1.000/2021 e gera o Termo de Conferência e Liberação
+  que acompanha o processo de pagamento.</p>
+
+  <div class="grade">
+    <div class="cartao"><h3>Conferência</h3><p>Prazos, leituras, custo de disponibilidade,
+    demanda, reativo, continuidade dos períodos e titularidade, sempre com o artigo da
+    norma e o cálculo. O programa aponta e explica; a decisão é do servidor.</p></div>
+    <div class="cartao"><h3>Termo de Conferência</h3><p>Documento em PDF por órgão,
+    distribuidora e mês, com versões e código de verificação.</p></div>
+    <div class="cartao"><h3>Painel</h3><p>Gastos por órgão, secretaria e unidade, consumo
+    dos últimos 13 meses, custos evitáveis e alertas de vencimento. Planilhas e dashboard
+    por agrupamento para as secretarias.</p></div>
+    <div class="cartao"><h3>Consulta no celular</h3><p>Aplicativo Android somente leitura,
+    com pacote cifrado por aparelho e PIN. Dados de cada unidade à mão para o
+    atendimento da distribuidora.</p></div>
+  </div>
+
+  <h2>Seus dados ficam com você</h2>
+  <p>O ConfereWatt roda no computador do órgão. As faturas, o banco de dados e os termos
+  ficam nesse computador. Não existe servidor do ConfereWatt e nada é enviado ao
+  desenvolvedor.</p>
+  <div class="destaque">
+    <strong>Google Drive (opcional).</strong> Se o órgão quiser, o programa guarda cópias de
+    segurança e os pacotes de consulta do celular no Google Drive <em>da própria
+    instalação</em>. O acesso pedido é o mínimo possível: o ConfereWatt só enxerga os
+    arquivos que ele mesmo criou, nunca os demais arquivos da conta. Detalhes na
+    <a href="privacidade.html">Política de Privacidade</a>.
+  </div>
+
+  <h2>Para quem é</h2>
+  <p>Prefeituras, câmaras, fundos e autarquias que pagam faturas de energia da Enel
+  Distribuição Rio e da Light e precisam conferir e documentar cada pagamento.</p>
+
+  <h2>Contato</h2>
+  <p>Dúvidas, sugestões ou pedidos sobre dados:
+  <a href="mailto:conferewatt@gmail.com">conferewatt@gmail.com</a>.</p>
+</main>
+<footer>
+  ConfereWatt · desenvolvido por Dalton Salema ·
+  <a href="privacidade.html">Política de Privacidade</a> ·
+  <a href="termos.html">Termos de Uso</a>
+</footer>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de Privacidade · ConfereWatt</title>
+<link rel="icon" type="image/svg+xml" href="img/icone.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header>
+  <img src="img/icone.svg" alt="">
+  <a class="marca" href="index.html">ConfereWatt</a>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="privacidade.html" aria-current="page">Privacidade</a>
+    <a href="termos.html">Termos de uso</a>
+  </nav>
+</header>
+<main>
+  <h1>Política de Privacidade</h1>
+  <p class="data">Vigente desde 24 de novembro de 2026.</p>
+
+  <p>Esta política explica como o ConfereWatt (programa para computador e aplicativo de
+  consulta para Android) trata informações. Em resumo: <strong>os dados ficam no
+  computador do órgão e, se o órgão quiser, no Google Drive da própria instalação. O
+  desenvolvedor não recebe, não vê e não guarda dados de ninguém.</strong></p>
+
+  <h2>1. Onde os dados ficam</h2>
+  <p>O ConfereWatt não tem servidor. As faturas importadas, o banco de dados, os termos e
+  os anexos ficam numa pasta do computador onde o programa está instalado, sob a
+  responsabilidade do órgão que o utiliza.</p>
+
+  <h2>2. Que dados o programa trata</h2>
+  <table>
+    <tr><th>Dado</th><th>Origem</th><th>Para quê</th></tr>
+    <tr><td>Dados das faturas de energia (unidades consumidoras, endereços, CNPJ do
+      órgão, leituras, consumo, valores, vencimentos)</td><td>PDFs enviados pela
+      distribuidora ao órgão</td><td>Conferência, termos, painel e consulta</td></tr>
+    <tr><td>Nome do operador e do responsável que assina o termo (e matrícula, se
+      informada)</td><td>Digitados no programa</td><td>Identificar quem conferiu e
+      quem assina o termo</td></tr>
+    <tr><td>Endereço de e-mail da conta Google escolhida para as cópias</td><td>Login
+      do Google, feito pelo próprio órgão</td><td>Mostrar em qual conta as cópias
+      estão sendo guardadas</td></tr>
+  </table>
+  <p>O programa não coleta dados de localização, contatos, câmera (exceto para ler o QR
+  Code de pareamento no celular, sem gravar imagem), nem dados de navegação.</p>
+
+  <h2>3. Uso do Google Drive</h2>
+  <p>O Google Drive é opcional. Quando o órgão conecta uma conta Google, o ConfereWatt
+  pede somente o acesso <code>drive.file</code>, que permite ver e alterar
+  <strong>apenas os arquivos criados pelo próprio ConfereWatt</strong>. O programa não
+  consegue ler, listar, alterar nem apagar nenhum outro arquivo da conta.</p>
+  <p>Com esse acesso, o ConfereWatt grava no Drive da instalação:</p>
+  <ul>
+    <li>cópias de segurança do banco de dados (as 30 mais recentes) e uma cópia de cada
+      arquivo guardado pelo programa: PDFs das faturas, termos e anexos das pendências;</li>
+    <li>os pacotes de consulta para os celulares pareados. Cada pacote é
+      <strong>cifrado (AES-256-GCM)</strong> com uma chave que existe só no computador e
+      no celular pareado, passada por QR Code presencialmente. O arquivo fica acessível
+      por um link secreto para o celular baixá-lo sem login; sem a chave, o conteúdo é
+      ilegível.</li>
+  </ul>
+  <p>A autorização do Google fica guardada no computador da instalação. Ela pode ser
+  desfeita a qualquer momento no próprio ConfereWatt (Sobre → Cópias de segurança →
+  Desconectar) ou na página
+  <a href="https://myaccount.google.com/permissions">Apps com acesso à sua conta</a>
+  do Google.</p>
+  <p>O uso e a transferência, pelo ConfereWatt, de informações recebidas das APIs do
+  Google seguem a
+  <a href="https://developers.google.com/terms/api-services-user-data-policy">Política
+  de Dados do Usuário dos Serviços de API do Google</a>, incluindo os requisitos de Uso
+  Limitado. Os dados obtidos do Google Drive são usados somente para as funções descritas
+  acima, não são transferidos a terceiros, não são usados para publicidade e não são
+  lidos por pessoas, inclusive pelo desenvolvedor.</p>
+
+  <h2>4. Aplicativo de consulta (Android)</h2>
+  <p>O celular recebe somente os pacotes cifrados descritos acima e guarda os dados
+  dentro do aplicativo, protegidos por PIN. Dez tentativas erradas apagam os dados do
+  aparelho. O pacote vale por 45 dias; depois disso, a consulta fica bloqueada até
+  chegar um pacote novo. O computador pode revogar um aparelho a qualquer momento,
+  o que apaga o arquivo daquele aparelho no Drive.</p>
+
+  <h2>5. O que o ConfereWatt não faz</h2>
+  <ul>
+    <li>Não exibe anúncios e não usa ferramentas de rastreamento ou estatísticas de uso.</li>
+    <li>Não vende, aluga nem compartilha dados.</li>
+    <li>Não envia dados ao desenvolvedor nem a qualquer servidor próprio.</li>
+  </ul>
+
+  <h2>6. Lei Geral de Proteção de Dados (LGPD)</h2>
+  <p>O órgão que instala e usa o ConfereWatt decide quais dados entram no programa e para
+  que são usados, sendo o controlador desses dados nos termos da Lei nº 13.709/2018. Os
+  pedidos dos titulares (acesso, correção, eliminação) devem ser feitos ao órgão. O
+  desenvolvedor não tem acesso aos dados, mas pode ajudar o órgão com dúvidas sobre o
+  funcionamento do programa.</p>
+
+  <h2>7. Guarda e eliminação</h2>
+  <p>Os dados ficam enquanto o órgão mantiver o programa e as cópias. Para eliminá-los:
+  apague a pasta de dados do ConfereWatt no computador, as cópias de segurança locais ou
+  em pendrive, a pasta do ConfereWatt no Google Drive e desinstale o aplicativo dos
+  celulares.</p>
+
+  <h2>8. Segurança</h2>
+  <p>Os arquivos guardados pelo programa ficam protegidos contra alteração acidental; os
+  termos têm código de verificação; os pacotes do celular são cifrados por aparelho.
+  A segurança do computador e da conta Google (senha forte e verificação em duas etapas)
+  é responsabilidade do órgão.</p>
+
+  <h2>9. Alterações e contato</h2>
+  <p>Mudanças nesta política serão publicadas nesta página, com a nova data de vigência.
+  Dúvidas: <a href="mailto:conferewatt@gmail.com">conferewatt@gmail.com</a>.</p>
+</main>
+<footer>
+  ConfereWatt · desenvolvido por Dalton Salema ·
+  <a href="index.html">Início</a> ·
+  <a href="termos.html">Termos de Uso</a>
+</footer>
+</body>
+</html>
+
+# Site do ConfereWatt
+
+Páginas públicas do ConfereWatt (início, política de privacidade e termos de
+uso), publicadas pelo GitHub Pages. Exigidas pelo Google para o app de
+cópias no Google Drive.
+
+Este repositório é **público**: aqui só entram estas páginas. O código do
+programa e as faturas ficam no repositório privado.
+
+- `index.html`: página inicial (tem os links para privacidade e termos)
+- `privacidade.html`: Política de Privacidade
+- `termos.html`: Termos de Uso
+- `estilo.css`: aparência (paleta "Petróleo e papel", claro e escuro)
+- `img/`: ícone e favicon
+
+Para mudar um texto, edite o arquivo no próprio GitHub (ícone de lápis) e
+salve ("Commit changes"). O site se atualiza em cerca de um minuto. Ao mudar a
+política ou os termos, atualize também a data de vigência no topo da página.
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Termos de Uso · ConfereWatt</title>
+<link rel="icon" type="image/svg+xml" href="img/icone.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header>
+  <img src="img/icone.svg" alt="">
+  <a class="marca" href="index.html">ConfereWatt</a>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="privacidade.html">Privacidade</a>
+    <a href="termos.html" aria-current="page">Termos de uso</a>
+  </nav>
+</header>
+<main>
+  <h1>Termos de Uso</h1>
+  <p class="data">Vigentes desde 24 de novembro de 2026.</p>
+
+  <p>Estes termos valem para o uso do ConfereWatt (programa para computador e aplicativo
+  de consulta para Android). Ao instalar e usar o ConfereWatt, o órgão concorda com
+  eles.</p>
+
+  <h2>1. O que o ConfereWatt faz</h2>
+  <p>O ConfereWatt é uma ferramenta de apoio à conferência de faturas de energia
+  elétrica. Ele lê os PDFs enviados pelas distribuidoras, compara os dados com regras
+  baseadas na REN ANEEL nº 1.000/2021 e aponta o que merece verificação, sempre com o
+  dado, o cálculo e o artigo correspondente.</p>
+
+  <h2>2. A decisão é do servidor</h2>
+  <p>O programa <strong>aponta e explica; não conclui nem decide</strong>. A liberação
+  das faturas para pagamento, as ressalvas, os pedidos à distribuidora e a assinatura do
+  Termo de Conferência são atos do servidor responsável, que deve conferir as
+  informações antes de decidir. O ConfereWatt não substitui a análise do servidor, a
+  orientação jurídica do órgão nem os canais oficiais da distribuidora e da ANEEL.</p>
+
+  <h2>3. Limites</h2>
+  <ul>
+    <li>A leitura automática depende do formato dos PDFs das distribuidoras, que pode mudar
+      sem aviso. Quando o formato não é reconhecido, o programa avisa e oferece o
+      lançamento manual.</li>
+    <li>As regras refletem a norma vigente na data de cada versão; o órgão pode registrar
+      novas versões da base normativa no próprio programa.</li>
+    <li>O ConfereWatt é fornecido no estado em que se encontra. O desenvolvedor trabalha
+      para corrigir falhas informadas, mas não garante que o programa esteja livre de
+      erros nem responde por decisões tomadas com base nele.</li>
+  </ul>
+
+  <h2>4. Responsabilidades do órgão</h2>
+  <ul>
+    <li>Manter o computador, as contas de acesso e a conta Google das cópias protegidos
+      (senha forte e verificação em duas etapas).</li>
+    <li>Manter cópias de segurança e conferir periodicamente se elas estão sendo feitas.</li>
+    <li>Parear com o aplicativo de consulta apenas celulares autorizados e revogar os que
+      não forem mais usados.</li>
+    <li>Tratar os dados conforme a LGPD e as normas internas do órgão
+      (veja a <a href="privacidade.html">Política de Privacidade</a>).</li>
+  </ul>
+
+  <h2>5. Serviços de terceiros</h2>
+  <p>O uso opcional do Google Drive está sujeito também aos termos do Google. O
+  ConfereWatt usa o Drive só para guardar os arquivos que ele mesmo cria, na conta
+  escolhida pelo órgão.</p>
+
+  <h2>6. Autoria</h2>
+  <p>O ConfereWatt, seu nome e seu ícone são de autoria de Dalton Salema. As condições
+  de licenciamento de cada instalação são as combinadas com o órgão.</p>
+
+  <h2>7. Alterações e contato</h2>
+  <p>Mudanças nestes termos serão publicadas nesta página, com a nova data de vigência.
+  Dúvidas: <a href="mailto:conferewatt@gmail.com">conferewatt@gmail.com</a>.</p>
+</main>
+<footer>
+  ConfereWatt · desenvolvido por Dalton Salema ·
+  <a href="index.html">Início</a> ·
+  <a href="privacidade.html">Política de Privacidade</a>
+</footer>
+</body>
+</html>
